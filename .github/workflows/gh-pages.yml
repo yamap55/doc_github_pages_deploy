@@ -1,6 +1,10 @@
 name: GitHub Pages
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - develop
 jobs:
   deploy:
     runs-on: ubuntu-20.04
@@ -9,7 +13,9 @@ jobs:
         with:
           fetch-depth: 0
       - name: rename
-        run: mv ./original/source.html ./docs/develop.html
+        env:
+          BRANCH_NAME: ${{github.head_ref}}
+        run: mv ./original/source.html ./docs/${BRANCH_NAME}.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
