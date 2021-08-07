@@ -1,6 +1,7 @@
 # doc_github_pages_deploy
 ## 概要
 - ドキュメントをブランチ別のファイル名でGitHub Pagesにデプロイする
+  - https://yamap55.github.io/doc_github_pages_deploy/
 
 ## 詳細
 - 下記のブランチにpushすると `original/source.html` を `ブランチ名.html` として `gh-pages` ブランチにpushする
